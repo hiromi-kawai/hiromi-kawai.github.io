@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>かわいひろみ</title>
+    <meta name="description" content="イラストレーター かわいひろみ のポートフォリオサイトです。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <script src="dist/spotlight.bundle.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Zen Maru Gothic', sans-serif;
+            font-weight: lighter;
+            text-align: center;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-color: rgba(255, 253, 237, 1);
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        h2 {
+            font-size: xx-large;
+        }
+
+        header {
+            height: 70px;
+            background-color: rgb(233, 117, 40);
+            position: fixed;
+            top: 0px;
+            width: 100%;
+        }
+
+        .header-left {
+            margin: 0 0 0 30px;
+            float: left;
+            height: 70px;
+        }
+
+        .header-left img {
+            width: 50px;
+        }
+
+        .header-left p {
+            position: relative;
+            height: 70px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            font-size: x-large;
+            margin: 7px 0 0 0;
+            padding-top: 7px;
+        }
+
+        .header-right ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .header-right li {
+            list-style: none;
+            float: left;
+            display: inline;
+            padding: 0 30px;
+            margin-top: 10px;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .header-right a {
+            color: rgb(255, 255, 255);
+            margin: 5px;
+        }
+
+        .hamburger {
+            display: none;
+            position: fixed;
+            z-index: 3;
+            right: 20px;
+            top: 15px;
+            width: 42px;
+            height: 42px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .hamburger span {
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            left: 6px;
+            background: #ffffff;
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 10px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 20px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 30px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 16px;
+            left: 6px;
+            background: #fff;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .hamburger.active span:nth-child(2),
+        .hamburger.active span:nth-child(3) {
+            top: 16px;
+            background: #fff;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        nav.globalMenuSp {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            color: #fff;
+            background: rgba(71, 70, 73, 0.8);
+            text-align: center;
+            width: 100%;
+            transform: translateX(100%);
+            transition: all 0.6s;
+            padding-top: 70px;
+            height: 100%;
+        }
+
+        nav.globalMenuSp ul {
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+        }
+
+        nav.globalMenuSp ul li {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            transition: .4s all;
+        }
+
+        nav.globalMenuSp ul li:last-child {
+            padding-bottom: 0;
+        }
+
+        nav.globalMenuSp ul li:hover {
+            background: #ddd;
+        }
+
+        nav.globalMenuSp ul li a {
+            display: block;
+            color: #fff;
+            padding: 1em 0;
+            text-decoration: none;
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        nav.globalMenuSp.active {
+            opacity: 100;
+            display: block;
+            transform: translateX(0%);
+        }
+
+
+        main {
+            margin-top: 70px;
+            margin-bottom: 70px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .spotlight img,
+        .image {
+            width: 29vw;
+            height: auto;
+            max-width: 300px;
+            margin: 1vmin 1vmin;
+        }
+
+        .image {
+            display: inline-block;
+            height: 20vw;
+            max-height: 200px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .spotlight img {
+            height: 20vw;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .spotlight {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: rgb(233, 117, 40);
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            height: 70px;
+        }
+
+        .footer-container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            float: left;
+            margin-left: 50px;
+        }
+
+        .footer-right {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 5px;
+        }
+
+        .footer-right li {
+            float: left;
+            list-style: none;
+            padding: 0 10px;
+        }
+
+        .sns {
+            color: white;
+        }
+
+        @media screen and (max-width:600px) {
+
+            .header-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <div class="header-left">
+                    <p>かわいひろみ</p>
+                </div>
+
+
+                <div class="header-right">
+                    <ul id="page-link">
+                        <li>
+                            <a href="#about">about</a>
+                        </li>
+                        <li>
+                            <a href="#works">works</a>
+                        </li>
+                        <li>
+                            <a href="#contact">contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="globalMenuSp">
+                        <ul>
+                            <li>
+                                <a href="#about">about</a>
+                            </li>
+                            <li>
+                                <a href="#works">works</a>
+                            </li>
+                            <li>
+                                <a href="#contact">contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="about" id="about">
+                <h2>about</h2>
+                <img src="img/works/niodori/icon.jpg" alt="icon">
+                <p>こんにちは。<br>
+                    イラストレーターのかわいひろみです。</p>
+
+                <p>1986年生まれ。<br>
+                    愛媛県出身、埼玉県在住。<br>
+                    子育てをしながら、絵を描いています。</p>
+
+                <p>絵本のようなあたたかでやさしいタッチのイラストを描きます。<br>
+                    （主に色鉛筆、iPadを使用）</p>
+
+                <p>個人事業主様、企業様からのご依頼を<br>
+                    承っております。<br>
+                    個人様からのご依頼もご相談ください。<br>
+                    お仕事実績は、<a href="#works">ポートフォリオ</a>をご覧ください。</p>
+
+                <p>私はこんな仕事がしたい：<br>
+                    絵本制作、児童書・雑誌への挿絵、テキスタイル、パッケージ、オーダーイラスト</p>
+
+                <p>Instagram・TwitterのDM、または<a href="#contact">contact</a>より、お気軽にお問い合わせください。</p>
+                <!--/area1-->
+            </section>
+            <section class="works" id="works">
+                <h2>works</h2>
+                <h3>におどりmamaマルシェ</h3>
+                <div class="spotlight-group" data-fit="contain" data-autohide="all">
+                    <a class="spotlight" href="img/works/niodori/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/niodori/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                    <a class="spotlight" href="img/works/niodori/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/niodori/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                    <a class="spotlight" href="img/works/niodori/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/niodori/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                </div>
+                <h3>個人依頼</h3>
+                <div class="spotlight-group" data-fit="contain" data-autohide="all">
+                    <a class="spotlight" href="img/works/individual/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/individual/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                    <a class="spotlight" href="img/works/individual/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/individual/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                    <a class="spotlight" href="img/works/individual/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/individual/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                    <a class="spotlight" href="img/works/individual/icon.jpg" data-button="Click Me!"
+                        data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
+                        data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
+                        <img src="img/works/individual/icon.jpg" alt="Lorem ipsum dolor sit amet">
+                    </a>
+                </div>
+            </section>
+            <section class="contact" id="contact">
+                <h2>Area 3</h2>
+                <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                </p>
+                <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                </p>
+                <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                </p>
+                <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                </p>
+                <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                </p>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-right">
+                    <ul class="sns-list">
+                        <li>
+                            <a href="#" class="sns facebook">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sns twitter">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="sns instagram">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/util.js"></script>
+
+</html>
