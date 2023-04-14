@@ -6,6 +6,14 @@
     <title>かわいひろみ</title>
     <meta name="description" content="イラストレーター かわいひろみ のポートフォリオサイトです。">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="kawai,hiromi,かわい,ひろみ,イラスト,絵本,イラストレーター">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="img/works/niodori/icon.jpg">
+    <meta property="og:title" content="かわいひろみ">
+    <meta property="og:description" content="イラストレーター かわいひろみ のポートフォリオサイトです。">
+    <meta property="og:url" content="https://hiromi-kawai.github.io/">
+    <meta property="og:site_name" content="かわいひろみ">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +25,7 @@
         body {
             margin: 0;
             font-family: 'Zen Maru Gothic', sans-serif;
+            color: rgb(46, 46, 46);
             font-weight: lighter;
             text-align: center;
             -ms-overflow-style: none;
@@ -30,6 +39,11 @@
 
         h2 {
             font-size: xx-large;
+        }
+
+        h2 a {
+            text-decoration: none;
+            color: rgb(46, 46, 46);
         }
 
         header {
@@ -84,6 +98,14 @@
 
         .hamburger {
             display: none;
+            position: fixed;
+            z-index: 3;
+            right: 0px;
+            top: 0px;
+            cursor: pointer;
+        }
+
+        .hamburgerContent {
             position: fixed;
             z-index: 3;
             right: 20px;
@@ -273,14 +295,34 @@
 <body>
     <div class="container">
         <header>
+            <div class="header-left">
+                <p>かわいひろみ</p>
+            </div>
+
+
+            <div class="header-right">
+                <ul id="page-link">
+                    <li>
+                        <a href="#about">about</a>
+                    </li>
+                    <li>
+                        <a href="#works">works</a>
+                    </li>
+                    <li>
+                        <a href="#contact">contact</a>
+                    </li>
+                </ul>
+            </div>
             <div>
-                <div class="header-left">
-                    <p>かわいひろみ</p>
+                <div class="hamburger">
+                    <div class="hamburgerContent">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-
-
-                <div class="header-right">
-                    <ul id="page-link">
+                <nav class="globalMenuSp">
+                    <ul>
                         <li>
                             <a href="#about">about</a>
                         </li>
@@ -291,32 +333,12 @@
                             <a href="#contact">contact</a>
                         </li>
                     </ul>
-                </div>
-                <div>
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <nav class="globalMenuSp">
-                        <ul>
-                            <li>
-                                <a href="#about">about</a>
-                            </li>
-                            <li>
-                                <a href="#works">works</a>
-                            </li>
-                            <li>
-                                <a href="#contact">contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                </nav>
             </div>
         </header>
         <main>
             <section class="about" id="about">
-                <h2>about</h2>
+                <h2><a href="#about">about</a></h2>
                 <img src="img/works/niodori/icon.jpg" alt="icon">
                 <p>こんにちは。<br>
                     イラストレーターのかわいひろみです。</p>
@@ -340,9 +362,9 @@
                 <!--/area1-->
             </section>
             <section class="works" id="works">
-                <h2>works</h2>
+                <h2><a href="#works">works</a></h2>
                 <h3>におどりmamaマルシェ</h3>
-                <div class="spotlight-group" data-fit="contain" data-autohide="all">
+                <div class="spotlight-group" data-fit="contain" data-autohide="all" data-infinite="true">
                     <a class="spotlight" href="img/works/niodori/icon.jpg" data-button="Click Me!"
                         data-button-href="javascript:alert('You can open an URL or execute some Javascript here.')"
                         data-description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.">
@@ -384,7 +406,7 @@
                 </div>
             </section>
             <section class="contact" id="contact">
-                <h2>Area 3</h2>
+                <h2><a href="#contact">contact</a></h2>
                 <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                 </p>
                 <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
